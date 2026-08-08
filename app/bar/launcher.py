@@ -1,4 +1,6 @@
 import subprocess
+import webbrowser
+from urllib.parse import quote
 
 
 def find_application(command):
@@ -33,3 +35,12 @@ def launch_application(command):
     )
 
     return True
+
+
+def open_website(url):
+    webbrowser.open(url)
+
+
+def search_web(query):
+    encoded_query = quote(query)
+    webbrowser.open(f"https://www.google.com/search?q={encoded_query}")
